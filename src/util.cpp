@@ -953,8 +953,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     unsigned short nCopyrightYear = boost::posix_time::second_clock::local_time().date().year();
     std::string strCopyrightHolders;
     strCopyrightHolders += "\n" + strprintf(strPrefix, 2009, nCopyrightYear) + " The Bitcoin Core developers";
-    strCopyrightHolders += "\n" + strprintf(strPrefix, 2011, nCopyrightYear) + " Globalboost Developers";
-    strCopyrightHolders += "\n" + strprintf(strPrefix, 2013, nCopyrightYear) + " The Monacoin Developers";
+    strCopyrightHolders += "\n" + strprintf(strPrefix, 2011, nCopyrightYear) + " The Globalboost Developers";
+    strCopyrightHolders += "\n" + strprintf(strPrefix, 2013, nCopyrightYear) + " The Monacoin Core Developers";
     strCopyrightHolders += "\n" + strprintf(strPrefix, 2015, nCopyrightYear) + " The Zcash Developers";
     strCopyrightHolders += "\n" + strprintf(strPrefix, 2017, nCopyrightYear) + " The LitecoinZ Developers";
     strCopyrightHolders += "\n" + strprintf(strPrefix, 2017, nCopyrightYear) + " The Koto Developers";
