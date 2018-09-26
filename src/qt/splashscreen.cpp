@@ -42,7 +42,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
 #endif
 
     // define text to place
-    QString titleText       = QString("%1    ").arg(tr(PACKAGE_NAME));
+    QString titleText       = tr(PACKAGE_NAME);
     QString versionText     = QString("Version %1").arg(QString::fromStdString(FormatFullVersion()));
     QString copyrightText   = QString::fromUtf8(CopyrightHolders("\xc2\xA9 %u-%u ").c_str());
     QString titleAddText    = networkStyle->getTitleAddText();
@@ -69,17 +69,16 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     pixPaint.fillRect(rGradient, gradient);
 
     // draw background
-    QRect rectBg(QPoint(-50, -50), QSize(splashSize.width() + 50, splashSize.height() + 50));
+    QRect rectBg(QPoint(0, 0), QSize(splashSize.width(), splashSize.height()));
     QPixmap bg(":/images/bg");
     pixPaint.drawPixmap(rectBg, bg);
         
     // check font size and drawing with
-    pixPaint.setFont(QFont(font, 30*fontFactor));
+    pixPaint.setFont(QFont(font, 33*fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
-    int titleTextWidth  = fm.width(titleText);
-    if(titleTextWidth > 160) {
-        // strange font rendering, Arial probably not found
-        fontFactor = 0.75;
+    int titleTextWidth = fm.width(titleText);
+    if (titleTextWidth > 200) {
+        fontFactor = fontFactor * 200 / titleTextWidth;
     }
 
     pixPaint.setFont(QFont(font, 33*fontFactor));
