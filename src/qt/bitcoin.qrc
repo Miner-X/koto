@@ -51,6 +51,7 @@
         <file alias="prompticon">res/icons/chevron.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file alias="bg">res/images/splash_bg.png</file>
         <file alias="prompt">res/images/prompt.png</file>
         <file alias="tx_mined">res/images/tx_mined.png</file>
         <file alias="verify">res/images/verify.png</file>
