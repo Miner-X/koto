@@ -361,6 +361,7 @@ RES_ICONS = \
   qt/res/images/shield.png \
   qt/res/images/shield-warning.png \
   qt/res/images/show.png \
+  qt/res/images/splash_bg.png \
   qt/res/images/synced.png \
   qt/res/images/transaction_confirmed.png \
   qt/res/images/transaction_conflicted.png \
