@@ -69,7 +69,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     pixPaint.fillRect(rGradient, gradient);
 
     // draw background
-    QRect rectBg(QPoint(0, 0), QSize(splashSize.width(), splashSize.height()));
+    QRect rectBg(QPoint(0, 0), QSize(splashSize.width() + 50, splashSize.height() + 50));
     QPixmap bg(":/images/bg");
     pixPaint.drawPixmap(rectBg, bg);
 
