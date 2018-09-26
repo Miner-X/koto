@@ -50,8 +50,8 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     QString font            = QApplication::font().toString();
 
     // create a bitmap according to device pixelratio
-    QSize splashSize(480*devicePixelRatio,320*devicePixelRatio);
-    pixmap = QPixmap(splashSize);
+    QSize splashSize(480,320);
+    pixmap = QPixmap(480*devicePixelRatio,320*devicePixelRatio);
 
 #if QT_VERSION > 0x050100
     // change to HiDPI if it makes sense
@@ -68,14 +68,11 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle *networkStyle) 
     QRect rGradient(QPoint(0,0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
-    // draw the koto icon, expected size of PNG: 1024x1024
-    QRect rectIcon(QPoint(-150,-122), QSize(430,430));
-
-    const QSize requiredSize(430,430);
-    QPixmap icon(networkStyle->getAppIcon().pixmap(requiredSize));
-
-    pixPaint.drawPixmap(rectIcon, icon);
-
+    // draw background
+    QRect rectBg(QPoint(-50, -50), QSize(splashSize.width() + 50, splashSize.height() + 50));
+    QPixmap bg(":/images/bg");
+    pixPaint.drawPixmap(rectBg, bg);
+        
     // check font size and drawing with
     pixPaint.setFont(QFont(font, 30*fontFactor));
     QFontMetrics fm = pixPaint.fontMetrics();
